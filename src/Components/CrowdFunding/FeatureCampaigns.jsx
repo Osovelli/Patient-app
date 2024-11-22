@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { Button } from "@/components/ui/button"
 
 const CampaignCard = ({ image, location, title, raised, goal, lastDonation }) => (
@@ -58,7 +58,7 @@ const FeaturedCampaigns = () => {
     return (
     <section className="py-12 px-4">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <h2 className="text-2xl font-bold">Featured Campaigns</h2>
           <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
             See all Campaigns
@@ -69,6 +69,65 @@ const FeaturedCampaigns = () => {
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {campaigns.map((campaign, index) => (
+            <CampaignCard key={index} {...campaign} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default FeaturedCampaigns */
+
+import React from 'react'
+import { Button } from "@/components/ui/button"
+import CampaignCard from './CampaignCard'
+import { Link } from 'react-router-dom'
+
+const FeaturedCampaigns = () => {
+  const campaigns = [
+    {
+      image: "/victoria.png",
+      location: "Ikeja, Lagos",
+      title: "Save Osaze Odemwingie",
+      raised: 100000,
+      goal: 500000,
+      lastDonation: "15m ago"
+    },
+    {
+      image: "/victoria.png",
+      location: "Abuja, FCT",
+      title: "Help Amina Fight Cancer",
+      raised: 250000,
+      goal: 1000000,
+      lastDonation: "1h ago"
+    },
+    {
+      image: "/victoria.png",
+      location: "Port Harcourt, Rivers",
+      title: "Support Emeka's Heart Surgery",
+      raised: 1050000,
+      goal: 2000000,
+      lastDonation: "30m ago"
+    }
+  ]
+
+  return (
+    <section className="py-12 px-4">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl font-bold">Featured Campaigns</h2>
+          <Link to={'/campaigns'}>
+            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
+              See all Campaigns
+            </Button>
+          </Link>     
+        </div>
+        <p className="text-gray-600 mb-8">
+          Discover impactful health causes and contribute to campaigns making a difference.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {campaigns?.map((campaign, index) => (
             <CampaignCard key={index} {...campaign} />
           ))}
         </div>

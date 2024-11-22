@@ -1,17 +1,38 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Button } from "@/components/ui/button"
 import NavigationMenuComponent from './NavigationMenuComponent'
 import { Logo } from '@/icons/Logo'
+import UserProfileDropdown from './UserProfleDropdown'
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const location = useLocation()
+
+  // Mock user data - replace with actual user data from your auth system
+  const user = {
+    name: "Abayomi Olowu",
+    email: "abayomi@patient.ng",
+    avatar: "/placeholder.svg?height=32&width=32"
+  }
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const navigationItems = [
-    { title: 'Advocacy', href: '/advocacy' },
-    { title: 'Crowdfunding', href: '/crowdfunding' },
+    { title: 'Advocacy', 
+      href: '/advocacy',
+      isActive: location.pathname.startsWith('/advocacy')
+    },
+    { 
+      title: 'Crowdfunding', 
+      href: '/crowdfunding',
+      isActive: location.pathname.startsWith('/crowdfunding')
+    },
+    { 
+      title: 'Insights', 
+      href: '/review',
+      isActive: location.pathname.startsWith('/review')
+    },
     {
       title: 'Resources',
       children: [
@@ -35,7 +56,7 @@ const Header = () => {
   ]
 
   return (
-    <header className="border-b bg-yellow-400 container">
+    <header className="container border-b bg-yellow-400">
       <div className="w-full mx-auto flex h-16 items-center justify-between px-4 bg-white fixed z-30">
         <Link to="/" className="flex items-center gap-2 group">
           <Logo />
@@ -47,14 +68,20 @@ const Header = () => {
           <NavigationMenuComponent items={navigationItems} />
         </nav>
 
-        {/* Desktop Buttons */}
+        {/* Desktop Auth Buttons or User Profile */}
         <div className="hidden items-center gap-4 md:flex">
-          <Button variant="outline" asChild>
-            <Link to="/signup">Sign Up</Link>
-          </Button>
-          <Button className="bg-emerald-500 hover:bg-emerald-600" asChild>
-            <Link to="/login">Log In</Link>
-          </Button>
+          {isLoggedIn ? (
+            <UserProfileDropdown user={user} />
+          ) : (
+            <>
+              <Button variant="outline" asChild>
+                <Link to="/signup">Sign Up</Link>
+              </Button>
+              <Button className="bg-emerald-500 hover:bg-emerald-600" asChild>
+                <Link to="/login">Log In</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -103,7 +130,9 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className="py-2 text-lg font-medium hover:text-gray-600"
+                      className={`py-2 text-lg font-medium hover:text-gray-600 ${
+                        item.isActive ? 'text-emerald-500' : ''
+                      }`}
                       onClick={toggleMenu}
                     >
                       {item.title}
@@ -111,12 +140,16 @@ const Header = () => {
                   )}
                 </React.Fragment>
               ))}
-              <Link to="/signup" className="py-2 text-lg font-medium hover:text-gray-600" onClick={toggleMenu}>
-                Sign Up
-              </Link>
-              <Link to="/login" className="py-2 text-lg font-medium hover:text-gray-600" onClick={toggleMenu}>
-                Log In
-              </Link>
+              {!isLoggedIn && (
+                <>
+                  <Link to="/signup" className="py-2 text-lg font-medium hover:text-gray-600" onClick={toggleMenu}>
+                    Sign Up
+                  </Link>
+                  <Link to="/login" className="py-2 text-lg font-medium hover:text-gray-600" onClick={toggleMenu}>
+                    Log In
+                  </Link>
+                </>
+              )}
             </nav>
           </div>
         )}
