@@ -5,7 +5,7 @@ import NavigationMenuComponent from './NavigationMenuComponent'
 import { Logo } from '@/icons/Logo'
 import UserProfileDropdown from './UserProfleDropdown'
 import { BiBookAlt, BiMessageRoundedDetail } from "react-icons/bi";
-import { AiOutlineDesktop } from "react-icons/ai";
+import { AiOutlineBarChart, AiOutlineDesktop } from "react-icons/ai";
 import { HiOutlineMicrophone } from "react-icons/hi2";
 import { SlTrophy } from "react-icons/sl";
 
@@ -31,11 +31,6 @@ const Header = ({ isLoggedIn }) => {
       title: 'Crowdfunding', 
       href: '/crowdfunding',
       isActive: location.pathname.startsWith('/crowdfunding')
-    },
-    { 
-      title: 'Insights', 
-      href: '/review',
-      isActive: location.pathname.startsWith('/review')
     },
     {
       title: 'Resources',
@@ -68,6 +63,12 @@ const Header = ({ isLoggedIn }) => {
           title: 'Awards',
           icon: <SlTrophy className='h-6 w-6' />,
           href: '/awards',
+          description: 'The latest industry news, updates and info.',
+        },
+        {
+          title: 'Insights',
+          icon: <AiOutlineBarChart className='h-6 w-6' />,
+          href: '/review',
           description: 'The latest industry news, updates and info.',
         },
       ],

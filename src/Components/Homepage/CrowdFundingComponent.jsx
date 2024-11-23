@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { MapPin, ArrowRight } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const CrowdfundingSection = () => {
   const campaigns = [
@@ -124,13 +125,16 @@ const CrowdfundingSection = () => {
           </div>
           
           <div className="mt-12 flex justify-center">
+            <Link to={'/campaigns'}>
             <Button
               variant="outline"
               className="group text-emerald-500 hover:text-emerald-600"
+              
             >
               See all crowdfunding
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
+            </Link>
           </div>
         </div>
       </section>

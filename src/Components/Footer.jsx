@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
 import { Logo } from '@/icons/Logo';
 import { Separator } from './ui/separator';
+import { FaFacebook } from 'react-icons/fa';
+import { BiLogoFacebook, BiLogoInstagram, BiLogoInstagramAlt, BiLogoLinkedin } from 'react-icons/bi';
 
 const Footer = () => {
   /* const [isVisible, setIsVisible] = useState(true);
@@ -32,9 +34,9 @@ const Footer = () => {
 
   return (
     <div className=''>
-        <footer 
+      <footer 
       className={` py-12 bg-[#003A39] text-white p-4 transition-transform duration-300`}
-    >
+      >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
           {/* Left section */}
@@ -45,21 +47,21 @@ const Footer = () => {
 
           {/* Middle section */}
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-[#00DC8A] transition-colors">Advocacy</a>
-            <a href="#" className="hover:text-[#00DC8A] transition-colors">Crowdfunding</a>
-            <a href="#" className="hover:text-[#00DC8A] transition-colors">Resources</a>
+            <a href="/advocacy" className="hover:text-[#00DC8A] transition-colors">Advocacy</a>
+            <a href="/crowdfunding" className="hover:text-[#00DC8A] transition-colors">Crowdfunding</a>
+            <a href="/resources" className="hover:text-[#00DC8A] transition-colors">Resources</a>
           </div>
 
           {/* Social icons */}
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-[#00DC8A] transition-colors">
-              <Facebook size={20} />
+              <BiLogoFacebook size={20} />
             </a>
             <a href="#" className="hover:text-[#00DC8A] transition-colors">
-              <Linkedin size={20} />
+              <BiLogoLinkedin size={20} />
             </a>
             <a href="#" className="hover:text-[#00DC8A] transition-colors">
-              <Instagram size={20} />
+              <BiLogoInstagram size={20} />
             </a>
           </div>
         </div>
@@ -70,9 +72,9 @@ const Footer = () => {
         <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <div>© 2024 Patient.ng. All rights reserved.</div>
           <div className="flex gap-4 mt-2 md:mt-0">
-            <a href="#" className="hover:text-[#00DC8A] transition-colors">Terms & Conditions</a>
+            <a href="#/terms and condition" className="hover:text-[#00DC8A] transition-colors">Terms & Conditions</a>
             <span>•</span>
-            <a href="#" className="hover:text-[#00DC8A] transition-colors">Privacy policy</a>
+            <a href="#/private policy" className="hover:text-[#00DC8A] transition-colors">Privacy policy</a>
           </div>
         </div>
       </div>

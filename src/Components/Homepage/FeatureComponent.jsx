@@ -15,8 +15,9 @@ const FeatureSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left side - Image placeholder */}
-          <div className="relative h-[600px] overflow-hidden rounded-3xl bg-teal-950">
+          <div className="relative h-[600px] overflow-hidden rounded-3xl">
             {/* You can replace this with an actual image */}
+            <img src='/hallway.jpeg' alt='steps' className='object-cover w-full' />
           </div>
 
           {/* Right side - Content */}
