@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Heart, Share2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { AllDonationsModal } from '@/Components/CrowdFunding/AllDonationsModal'
+import { DonationModal } from '@/Components/CrowdFunding/DonationModal'
 
 // Mock data - replace with API call later
 const campaignData = {
@@ -32,14 +34,24 @@ const campaignData = {
   Remote work often grants more independence, empowering individuals to manage their tasks and projects with minimal supervision. It can foster a sense of ownership and self-motivation, leading to increased productivity and personal growth.
 
   Remote work relies heavily on digital communication tools, which may not fully replicate the benefits of in-person interactions. Building rapport, brainstorming, and resolving conflicts may require extra effort to ensure effective communication and teamwork.`,
+  allDonations: [
+    { name: 'Jermaine Kling', amount: 2000, time: '2 days' },
+    { name: 'Carmen Kub', amount: 2000, time: '2 days' },
+    { name: 'Karl Hyatt', amount: 2000, time: '2 days' },
+    { name: 'Eudora Abernathy', amount: 2000, time: '2 days' },
+    { name: 'Gladyce Spencer', amount: 2000, time: '2 days' },
+  ],
   recentDonations: [
-    { name: 'Abayomi Olowu', amount: 2000 },
-    { name: 'Anonymous', amount: 100000 },
-    { name: 'Kenneth Allen', amount: 5000 },
+    { name: 'Abayomi Olowu', amount: 2000, time: '1 day' },
+    { name: 'Anonymous', amount: 100000, time: '2 days' },
+    { name: 'Kenneth Allen', amount: 5000, time: '2 days' },
   ]
 }
 
 export default function CampaignDetails() {
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false)
+  const [isAllDonationModalOpen, setIsAllDonationModalOpen] = useState(false)
+
   const { id } = useParams()
   const progress = (campaignData.raised / campaignData.goal) * 100
 
@@ -86,7 +98,10 @@ export default function CampaignDetails() {
                 <p className="text-gray-500 text-sm">{campaignData.donations} donations</p>
               </div>
 
-              <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white mb-6">
+              <Button
+              onClick={() => setIsDonateModalOpen(true)} 
+              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white mb-6"
+              >
                 Donate now
               </Button>
 
@@ -116,7 +131,11 @@ export default function CampaignDetails() {
                     </div>
                   ))}
                 </div>
-                <Button variant="link" className="text-emerald-500 hover:text-emerald-600 mt-4 p-0">
+                <Button 
+                variant="link" 
+                className="text-emerald-500 hover:text-emerald-600 mt-4 p-0"
+                onClick={() => setIsAllDonationModalOpen(true)}
+                >
                   See all donations
                 </Button>
               </div>
@@ -124,6 +143,16 @@ export default function CampaignDetails() {
           </div>
         </div>
       </div>
+      {/* Add the DonationsModal */}
+      <AllDonationsModal
+        isOpen={isAllDonationModalOpen}
+        onClose={() => setIsAllDonationModalOpen(false)}
+        donations={campaignData.allDonations}
+      />
+      <DonationModal
+        isOpen={isDonateModalOpen}
+        onClose={() => setIsDonateModalOpen(false)}
+      />
     </div>
   )
 }

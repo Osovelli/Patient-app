@@ -101,7 +101,7 @@ export default function WebinarDetailsPage() {
 
           {/* Registration Form */}
           <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
+            <div  id='#webinar' className="bg-white p-6 rounded-lg shadow-sm border">
               <h2 className="text-xl font-semibold text-center mb-6">Watch On-Demand</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">

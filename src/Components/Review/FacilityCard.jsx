@@ -1,6 +1,7 @@
 import { Globe, Mail, Phone, Star } from "lucide-react"
 import { Badge } from "../ui/badge"
 import { Button } from "../ui/button"
+import { Link } from "react-router-dom"
 
 function FacilityCard({ facility }) {
   return (
@@ -35,6 +36,7 @@ function FacilityCard({ facility }) {
           <span className="text-gray-600">{facility.rating}</span>
           <span className="text-gray-400">•</span>
           <span className="text-gray-600">{facility.reviews} Reviews</span>
+          
         </div>
         <p className="text-gray-500 mb-2">{facility.location}</p>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between">
@@ -55,9 +57,11 @@ function FacilityCard({ facility }) {
             <Button variant="ghost" size="icon">
               <Phone className="w-4 h-4" />
             </Button>
-            <Button variant="link" className="text-emerald-500 p-0">
-              See reviews
-            </Button>
+            <Link to={`/review/${facility.id}`}>
+              <Button variant="link" className="text-emerald-500 p-0">
+                See reviews
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

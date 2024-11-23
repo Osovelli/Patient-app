@@ -28,18 +28,20 @@ const UserProfileDropdown = ({ user }) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-38">
         <DropdownMenuItem asChild>
-          <Link to="/profile">Profile</Link>
+          <Link to="/account">Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link to="/settings">Settings</Link>
+          <Link to="#">Settings</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link to="/my-campaigns">My Campaigns</Link>
+          <Link to="/campaigns">My Campaigns</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="text-red-600">
+        <Link to={'/login'}>
+        <DropdownMenuItem  className="text-red-600">
           Logout
         </DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   )

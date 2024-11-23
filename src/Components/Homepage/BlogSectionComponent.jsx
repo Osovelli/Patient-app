@@ -44,6 +44,7 @@ const BlogSection = () => {
               Here's a quick glance over our latest blog posts and media articles written by our team members, staff and guest writers.
             </p>
           </div>
+          <Link to={'/blog'}>
           <Button 
             variant="outline" 
             className="group text-emerald-500 hover:text-emerald-600"
@@ -51,6 +52,7 @@ const BlogSection = () => {
             See all blog posts
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
+          </Link>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

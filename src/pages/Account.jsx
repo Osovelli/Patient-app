@@ -66,10 +66,10 @@ export default function AccountPage() {
 
   return (
     <AppLayout showHeader={true} loggedIn={true}>
-        <div className='container mx-auto px-4 py-8 space-y-4'>
+        <div className='mx-auto px-4 py-8 space-y-4'>
             <h2 className='text-3xl font-semibold'>Account</h2>
             {/*Desktop screen*/}
-            <div className="flex gap-8">
+            <div className="flex flex-col sm:flex-row gap-8">
                 <ProfileDetails activeTab={activeTab} setActiveTab={setActiveTab} />
                 <div className="flex-1 bg-white p-8 rounded-lg shadow-sm">
                     {activeTab === 'Account Information' && (

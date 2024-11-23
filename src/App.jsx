@@ -50,7 +50,7 @@ function App() {
         <Route path="/podcast" element={<PodcastPage />} />
         <Route path="/podcast/:id" element={<SingleEpisode />} />
         <Route path="/review" element={<ReviewPage />} />
-        <Route path="/review/facility" element={<ReviewFacility/>} />
+        <Route path="/review/:id" element={<ReviewFacility/>} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/advocacy" element={<Advocacy/>} />
         <Route path="/awards" element={<AwardsPage />} />

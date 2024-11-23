@@ -2,10 +2,11 @@ import { Flag, Heart, Hospital, LogOut, User2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { CustomButton } from "../CustomButton";
+import { Link } from "react-router-dom";
 
 export function ProfileDetails({ activeTab, setActiveTab }) {
     return (
-      <div className="w-64 p-4 flex flex-col justify-between bg-white rounded-lg shadow-md h-auto">
+      <div className="md:w-64 w-full p-4 flex flex-col justify-between bg-white rounded-lg shadow-md h-auto">
         <div>
         <div className="flex flex-col items-center mb-6">
           <Avatar className="h-20 w-20 mb-2 border-2">
@@ -33,10 +34,12 @@ export function ProfileDetails({ activeTab, setActiveTab }) {
           ))}
         </div>
         </div>
-        <CustomButton buttonVariant="outline" className="w-full justify-start mt-6 text-red-500">
+        <Link to={"/login"}>
+        <CustomButton  buttonVariant="outline" className="w-full justify-start mt-6 text-red-500">
           <LogOut />
           Log Out
         </CustomButton>
+        </Link>
       </div>
     )
   }

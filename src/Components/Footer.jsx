@@ -72,9 +72,9 @@ const Footer = () => {
         <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <div>© 2024 Patient.ng. All rights reserved.</div>
           <div className="flex gap-4 mt-2 md:mt-0">
-            <a href="#/terms and condition" className="hover:text-[#00DC8A] transition-colors">Terms & Conditions</a>
+            <a href="#terms and condition" className="hover:text-[#00DC8A] transition-colors">Terms & Conditions</a>
             <span>•</span>
-            <a href="#/private policy" className="hover:text-[#00DC8A] transition-colors">Privacy policy</a>
+            <a href="#private policy" className="hover:text-[#00DC8A] transition-colors">Privacy policy</a>
           </div>
         </div>
       </div>

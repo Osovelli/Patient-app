@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Mic, Monitor, Play, Clock, Calendar } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const PodcastWebinarsSection = () => {
   const episodes = [
@@ -64,6 +65,7 @@ const PodcastWebinarsSection = () => {
                 Tune in to expert-led podcasts and webinars on health and wellness topics that matter to you.
               </p>
             </div>
+            <Link to={'/podcast'}>
             <Button 
               variant="outline" 
               className="group border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white"
@@ -71,6 +73,7 @@ const PodcastWebinarsSection = () => {
               See Podcasts & Webinars
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
+            </Link>
           </div>
 
           {/* Latest Episodes */}
@@ -103,10 +106,12 @@ const PodcastWebinarsSection = () => {
                         </div>
                         <h4 className="mt-2 font-bold">{episode.title}</h4>
                       </div>
+                      <Link to={`/podcast/${episode.id}`}>
                       <Button className="w-fit bg-emerald-500 hover:bg-emerald-600">
                         <Play className="mr-2 h-4 w-4" />
                         Play Episode
                       </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -176,6 +181,7 @@ const PodcastWebinarsSection = () => {
                           </Badge>
                         ))}
                       </div>
+                      <Link to={`/webinars/${webinar.id}/#webinar`}>
                       <Button
                         variant="link"
                         className={`group p-0 ${
@@ -183,10 +189,12 @@ const PodcastWebinarsSection = () => {
                             ? 'text-emerald-700' 
                             : 'text-emerald-500'
                         }`}
+                        
                       >
                         Sign up
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>

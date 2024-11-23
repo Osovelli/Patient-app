@@ -7,6 +7,7 @@ import { ExternalLinkComponent } from '@/Components/Review/ExternalLink'
 import { AppLayout } from '@/Components/AppLayout'
 import { RatingBar } from '@/Components/Review/RatingBar'
 import { ReviewCard } from '@/Components/Review/ReviewCard'
+import { useParams } from 'react-router-dom'
 
 // Mock review data
 const reviews = [
@@ -26,6 +27,8 @@ const reviews = [
 
 
 export default function ReviewFacility() {
+  const { id } = useParams()
+
   return (
     <AppLayout showHeader={true}>
     <div className="max-w-4xl mx-auto px-4 py-8">

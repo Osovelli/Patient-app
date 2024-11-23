@@ -8,9 +8,13 @@ import { BiBookAlt, BiMessageRoundedDetail } from "react-icons/bi";
 import { AiOutlineBarChart, AiOutlineDesktop } from "react-icons/ai";
 import { HiOutlineMicrophone } from "react-icons/hi2";
 import { SlTrophy } from "react-icons/sl";
+import { ChevronDown } from 'lucide-react'
+import { ProfileDetails } from './Account/ProfileDetails'
+import HeaderProfile from './HeaderProfile'
 
 const Header = ({ isLoggedIn }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [openDropdowns, setOpenDropdowns] = useState({})
   const location = useLocation()
 
   // Mock user data - replace with actual user data from your auth system
@@ -21,6 +25,13 @@ const Header = ({ isLoggedIn }) => {
   }
 
   const toggleMenu = () => setIsOpen(!isOpen)
+
+  const toggleDropdown = (index) => {
+    setOpenDropdowns(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }))
+  }
 
   const navigationItems = [
     { title: 'Advocacy', 
@@ -130,15 +141,28 @@ const Header = ({ isLoggedIn }) => {
             <nav className="flex flex-col p-4">
               {navigationItems.map((item, index) => (
                 <React.Fragment key={index}>
-                  {item.children ? (
-                    <div className="py-2">
-                      <span className="text-lg font-medium">{item.title}</span>
-                      <ul className="ml-4 mt-2 space-y-2">
+                {item.children ? (
+                  <div className="py-2">
+                    <button
+                      onClick={() => toggleDropdown(index)}
+                      className="flex items-center justify-between w-full text-lg font-medium"
+                      aria-expanded={openDropdowns[index]}
+                      aria-controls={`dropdown-${index}`}
+                    >
+                      <span>{item.title}</span>
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-200 ${
+                          openDropdowns[index] ? 'transform rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openDropdowns[index] && (
+                      <ul id={`dropdown-${index}`} className="ml-4 mt-2 space-y-2">
                         {item.children.map((child, childIndex) => (
                           <li key={childIndex}>
                             <Link
                               to={child.href}
-                              className="text-sm hover:text-gray-600"
+                              className="text-sm hover:text-gray-600 flex items-center gap-2"
                               onClick={toggleMenu}
                             >
                               {child.title}
@@ -146,19 +170,20 @@ const Header = ({ isLoggedIn }) => {
                           </li>
                         ))}
                       </ul>
-                    </div>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      className={`py-2 text-lg font-medium hover:text-gray-600 ${
-                        item.isActive ? 'text-emerald-500' : ''
-                      }`}
-                      onClick={toggleMenu}
-                    >
-                      {item.title}
-                    </Link>
-                  )}
-                </React.Fragment>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`py-2 text-lg font-medium hover:text-gray-600 ${
+                      item.isActive ? 'text-emerald-500' : ''
+                    }`}
+                    onClick={toggleMenu}
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </React.Fragment>
               ))}
               {!isLoggedIn && (
                 <>
@@ -169,6 +194,9 @@ const Header = ({ isLoggedIn }) => {
                     Log In
                   </Link>
                 </>
+              )}
+              {isLoggedIn && (
+                <HeaderProfile user={user} />
               )}
             </nav>
           </div>
