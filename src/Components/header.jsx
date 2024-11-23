@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button"
 import NavigationMenuComponent from './NavigationMenuComponent'
 import { Logo } from '@/icons/Logo'
 import UserProfileDropdown from './UserProfleDropdown'
+import { BiBookAlt, BiMessageRoundedDetail } from "react-icons/bi";
+import { AiOutlineDesktop } from "react-icons/ai";
+import { HiOutlineMicrophone } from "react-icons/hi2";
+import { SlTrophy } from "react-icons/sl";
 
 const Header = ({ isLoggedIn }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +17,7 @@ const Header = ({ isLoggedIn }) => {
   const user = {
     name: "Abayomi Olowu",
     email: "abayomi@patient.ng",
-    avatar: "/placeholder.svg?height=32&width=32"
+    avatar: "/Avatar/avatar 1.1.png"
   }
 
   const toggleMenu = () => setIsOpen(!isOpen)
@@ -37,19 +41,34 @@ const Header = ({ isLoggedIn }) => {
       title: 'Resources',
       children: [
         {
-          title: 'Guides',
-          href: '/resources/guides',
-          description: 'Step-by-step instructions for common healthcare processes.',
+          title: 'Blog',
+          icon: <BiBookAlt className='h-6 w-6' />,
+          href: '/blog',
+          description: 'The latest industry news, updates and info.',
         },
         {
-          title: 'Documentation',
-          href: '/resources/documentation',
-          description: 'Detailed information about our platform and services.',
+          title: 'Patient Stories',
+          icon: <BiMessageRoundedDetail className='h-6 w-6'  />,
+          href: '/stories',
+          description: 'The latest industry news, updates and info.',
         },
         {
-          title: 'FAQ',
-          href: '/resources/faq',
-          description: 'Answers to frequently asked questions about healthcare and our platform.',
+          title: 'Webinars',
+          icon: <AiOutlineDesktop className='h-6 w-6' />,
+          href: '/webinars',
+          description: 'The latest industry news, updates and info.',
+        },
+        {
+          title: 'Podcasts',
+          icon: <HiOutlineMicrophone className='h-6 w-6' />,
+          href: '/podcast',
+          description: 'The latest industry news, updates and info.',
+        },
+        {
+          title: 'Awards',
+          icon: <SlTrophy className='h-6 w-6' />,
+          href: '/awards',
+          description: 'The latest industry news, updates and info.',
         },
       ],
     },

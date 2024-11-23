@@ -53,7 +53,7 @@ function App() {
         <Route path="/review/facility" element={<ReviewFacility/>} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/advocacy" element={<Advocacy/>} />
-        <Route path="/award" element={<AwardsPage />} />
+        <Route path="/awards" element={<AwardsPage />} />
       </Routes>
     </BrowserRouter>
   );

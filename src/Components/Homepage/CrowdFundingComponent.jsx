@@ -44,8 +44,8 @@ const CrowdfundingSection = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="overflow-hidden px-6 bg-white py-24">
-        <div className="container px-4">
+      <section className="overflow-hidden px-6 py-24">
+        <div className="px-4">
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
               <span className="text-sm font-medium text-emerald-500">
@@ -74,7 +74,7 @@ const CrowdfundingSection = () => {
 
       {/* Campaigns Section */}
       <section className="bg-gray-50 py-24">
-        <div className="container px-4">
+        <div className="px-4">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {campaigns.map((campaign) => (
               <Card key={campaign.id} className="overflow-hidden">

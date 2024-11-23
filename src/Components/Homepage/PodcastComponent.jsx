@@ -50,7 +50,7 @@ const PodcastWebinarsSection = () => {
       
       {/* Content with background color overlay */}
       <div className="relative  py-24">
-        <div className="container px-4 ">
+        <div className="px-4 ">
           {/* Header */}
           <div className="mb-16 flex flex-col md:flex-row gap-4 items-start justify-between">
             <div className="text-white">

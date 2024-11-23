@@ -22,10 +22,10 @@ export const HeroSection = () => {
           Empower healing across Nigeria with a single click. Your support turns challenges into triumphs, making quality healthcare a reality for all.
         </p>
         <div className="flex space-x-4">
-          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
+          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white ">
             Start a Crowdfunding
           </Button>
-          <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black">
+          <Button variant="outline" className="bg-white text-black hover:bg-gray/100 hover:text-emerald-500">
             See Campaigns
           </Button>
         </div>

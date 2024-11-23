@@ -4,7 +4,7 @@ import { Logo } from '@/icons/Logo';
 import { Separator } from './ui/separator';
 
 const Footer = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  /* const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
@@ -28,14 +28,12 @@ const Footer = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY]); */
 
   return (
-    <div className='py-24'>
+    <div className=''>
         <footer 
-      className={`fixed bottom-0 left-0 right-0 bg-[#003A39] text-white p-4 transition-transform duration-300 ${
-        isVisible ? 'translate-y-0' : 'translate-y-full'
-      }`}
+      className={` py-12 bg-[#003A39] text-white p-4 transition-transform duration-300`}
     >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">

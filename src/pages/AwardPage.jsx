@@ -5,6 +5,7 @@ import { HeroSection } from '@/Components/Award/HeroSection'
 import { FilterSection } from '@/Components/Award/FilterSection'
 import { AwardCard } from '@/Components/Award/AwardCard'
 import { Pagination } from '@/Components/Award/Pagination'
+import { AppLayout } from '@/Components/AppLayout'
 
 
 export default function AwardsPage() {
@@ -20,6 +21,7 @@ export default function AwardsPage() {
   }))
 
   return (
+    <AppLayout showHeader={true}>
     <div className="min-h-screen bg-gray-50">
       <HeroSection />
       
@@ -50,5 +52,6 @@ export default function AwardsPage() {
         </div>
       </main> 
     </div>
+    </AppLayout>
   )
 }

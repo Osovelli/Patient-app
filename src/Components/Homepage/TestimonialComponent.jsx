@@ -33,7 +33,7 @@ const TestimonialSection = () => {
 
   return (
     <section className="py-24">
-      <div className="container px-4">
+      <div className="px-4">
         <div className="mb-12 flex items-center md:items-end gap-2 flex-col md:flex-row justify-between">
           <div>
             <span className="text-sm font-medium text-emerald-500">

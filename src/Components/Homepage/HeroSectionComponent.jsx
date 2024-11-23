@@ -4,20 +4,12 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br mt-20 from-emerald-50/50 via-white to-emerald-50/50">
-      {/* Announcement Banner */}
-      <div className="flex justify-center py-3">
-        {/* <div className="inline-flex items-center rounded-full border bg-background px-3 py-1 text-sm">
-          <span className="mr-2 rounded-full bg-emerald-500 px-1.5 py-0.5 text-xs font-medium text-white">
-            + v1.0
-          </span>
-          <span className="mr-2">iPatient app is out now!</span>
-          <ArrowRight className="h-4 w-4" />
-        </div> */}
+    <section className="relative bg-green-200 flex items-center overflow-hidden bg-gradient-to-br mt-20 from-emerald-50/50 via-white to-emerald-50/50">
+      <div className='absolute inset-0 h-full w-full object-cover z-50'>
+        <img src='/Grid layers.png' alt='grid layers' className='w-full h-full' />
       </div>
-
       {/* Hero Content */}
-      <div className="container px-4 pb-24 pt-10 md:pt-12">
+      <div className="w-full px-4 pb-24 pt-10 md:pt-12">
         {/* Text Content */}
         <div className="mx-auto max-w-[800px] text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -43,7 +35,7 @@ const HeroSection = () => {
           <img
             src="/Hero background.png"
             alt="Healthcare Professional with Service Icons"
-            className="w-full h-auto"
+            className="w-full h-auto bg-blend-"
           />
         </div>
       </div>

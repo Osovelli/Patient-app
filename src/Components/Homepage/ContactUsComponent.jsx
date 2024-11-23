@@ -5,7 +5,7 @@ import { Button } from '../ui/button'
 export const ContactUsSection = () => {
   return (
     <div className='py-12'>
-        <div className='container px-8'>
+        <div className='px-8'>
             <div className='pt-4 flex flex-col items-center bg-gray-50 bg=[#F7F7F8] w-full gap-8'>
                 <div className='flex items-center gap-2 group'>
                     <Logo />

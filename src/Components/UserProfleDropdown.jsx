@@ -15,7 +15,7 @@ const UserProfileDropdown = ({ user }) => {
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center gap-2 outline-none">
         <div className="flex items-center gap-2">
-          <Avatar className="h-8 w-8">
+          <Avatar className="h-8 w-8 border">
             <AvatarImage src={user.avatar} alt={user.name} />
             <AvatarFallback>{user.name[0]}</AvatarFallback>
           </Avatar>

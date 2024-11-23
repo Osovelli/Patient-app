@@ -8,8 +8,8 @@ export function ProfileDetails({ activeTab, setActiveTab }) {
       <div className="w-64 p-4 flex flex-col justify-between bg-white rounded-lg shadow-md h-auto">
         <div>
         <div className="flex flex-col items-center mb-6">
-          <Avatar className="h-20 w-20 mb-2">
-            <AvatarImage src="/placeholder.svg?height=80&width=80" />
+          <Avatar className="h-20 w-20 mb-2 border-2">
+            <AvatarImage  src="/Avatar/avatar 1.1.png" />
             <AvatarFallback>OA</AvatarFallback>
           </Avatar>
           <h2 className="text-lg font-semibold">Olowu Abayomi</h2>

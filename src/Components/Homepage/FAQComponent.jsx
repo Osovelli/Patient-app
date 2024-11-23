@@ -40,7 +40,7 @@ const FAQSection = () => {
 
   return (
     <section className="py-24">
-      <div className="container px-8">
+      <div className="px-8">
         <div className="mx-auto">
           <h2 className="text-3xl font-bold sm:text-4xl">
             FAQ's

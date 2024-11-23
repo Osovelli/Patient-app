@@ -31,7 +31,7 @@ const BlogSection = () => {
 
   return (
     <section className="py-8">
-      <div className="container px-8">
+      <div className="px-8">
         <div className="mb-12 flex flex-col md:flex-row items-center md:items-end justify-between gap-2">
           <div className=''>
             <span className="text-sm font-medium text-emerald-500">
