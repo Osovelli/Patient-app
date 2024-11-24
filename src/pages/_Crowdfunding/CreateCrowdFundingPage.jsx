@@ -48,33 +48,37 @@ const CreateFundraiserContent = () => {
 
   return (
     <AppLayout showHeader={true} loggedIn={true}>
-      <div className="container mx-auto px-4 min-h-dvh flex flex-col">
-        <div className="flex-grow grid md:grid-cols-[300px,1fr] gap-8 bg-none">
-          <ProgressTracker steps={fundraiserSteps} currentStep={currentStep} />
-          <div className="flex flex-col h-[calc(100vh-theme(spacing.16))] bg-gray-50">
-            <div className="flex-grow overflow-y-auto px-4">
-              <StepContent currentStep={currentStep} onEdit={handleEdit} />
-            </div>
-            <div className="flex justify-between p-4 bg-gray-50 border-t">
-              <Button
-                variant="outline"
-                onClick={handlePrev}
-                disabled={currentStep === 1}
-                className="flex items-center gap-2"
-              >
-                <ArrowLeft className="h-4 w-4" /> Prev
-              </Button>
-              {currentStep === fundraiserSteps.length ? (
-                <Button onClick={handleSubmit} className="flex items-center gap-2">
-                  Submit
-                </Button>
-              ) : (
-                <Button onClick={handleNext} className="flex items-center gap-2">
-                  Next <ArrowRight className="h-4 w-4" />
-                </Button>
-              )}
+      <div className="mx-auto px-4 h-[calc(100vh-theme(spacing.16))] flex flex-col">
+        <div className="flex-grow flex flex-col md:flex-row overflow-hidden">
+          <div className="md:w-[300px] flex-shrink-0">
+            <div className="sticky top-0 z-10 bg-gray-50 p-4 h-[20%] md:h-full">
+              <ProgressTracker steps={fundraiserSteps} currentStep={currentStep} />
             </div>
           </div>
+          <div className="flex-grow flex flex-col overflow-hidden h-[80%]">
+            <div className="flex-grow overflow-y-scroll px-4 py-6">
+              <StepContent currentStep={currentStep} onEdit={handleEdit} />
+            </div>
+          </div>
+        </div>
+        <div className="sticky md:ml-72 bottom-0 md:left-0 right-0 h-[20%] flex justify-between p-4 bg-gray-50 border-t z-10">
+          <Button
+            variant="outline"
+            onClick={handlePrev}
+            disabled={currentStep === 1}
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" /> Prev
+          </Button>
+          {currentStep === fundraiserSteps.length ? (
+            <Button onClick={handleSubmit} className="flex items-center gap-2">
+              Submit
+            </Button>
+          ) : (
+            <Button onClick={handleNext} className="flex items-center gap-2">
+              Next <ArrowRight className="h-4 w-4" />
+            </Button>
+          )}
         </div>
       </div>
     </AppLayout>
