@@ -55,7 +55,7 @@ export default function HeroSection() {
           {/* Featured Video */}
           <div className="relative rounded-2xl overflow-hidden aspect-video">
             <img
-              src="/placeholder.svg?height=600&width=1200"
+              src="/medical checkup.jpeg"
               alt="Featured podcast episode"
               className="w-full h-full object-cover"
             />

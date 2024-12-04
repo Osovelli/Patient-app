@@ -2,7 +2,7 @@ import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-export default function WebinarCard({ id, color = 'emerald', title, subtitle, categories, isLoggedIn }) {
+export default function WebinarCard({ id, color = 'emerald', image, title, subtitle, categories, isLoggedIn }) {
   const bgColors = {
     emerald: 'bg-emerald-500',
     teal: 'bg-teal-800',
@@ -12,7 +12,7 @@ export default function WebinarCard({ id, color = 'emerald', title, subtitle, ca
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className={`${bgColors[color]} p-6 h-32 relative`}>
-        <img src="/logo.svg" alt="Patient.ng" className="h-6" />
+        <img src={image} alt="Patient.ng" className="h-8 w-8 object-cover" />
         <p className="text-white mt-4">{subtitle}</p>
       </div>
       <div className="p-4">

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { HeroSection } from '@/Components/Award/HeroSection'
-import { FilterSection } from '@/Components/Award/FilterSection'
-import { AwardCard } from '@/Components/Award/AwardCard'
-import { Pagination } from '@/Components/Award/Pagination'
-import { AppLayout } from '@/Components/AppLayout'
+import { HeroSection } from '@/components/award/HeroSection'
+import { FilterSection } from '@/components/award/FilterSection'
+import { AwardCard } from '@/components/award/AwardCard'
+import { Pagination } from '@/components/award/Pagination'
+import { AppLayout } from '@/components/AppLayout'
 
 
 export default function AwardsPage() {

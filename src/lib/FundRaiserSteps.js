@@ -1,12 +1,12 @@
 export const fundraiserSteps = [
-    {
-      number: 1,
-      title: "Add a cover photo or video",
-      description: "Please provide your name and email",
-    },
+  {
+    number: 1,
+    title: "Share the details of your fundraising with donors",
+    description: "Please provide your name and email",
+  },
     {
       number: 2,
-      title: "Share the details of your fundraising with donors",
+      title: "Add a cover photo or video",
       description: "Please provide your name and email",
     },
     {

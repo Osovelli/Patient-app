@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CustomButton } from "../CustomButton";
 import { CustomSelect } from "../CustomSelect";
 import { FormInput } from "../FormInput";
@@ -96,7 +97,7 @@ export function AccountInformationFormTab({ formData, handleInputChange, handleS
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-4">Change Password</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormInput
               label="Old Password"
               id="oldPassword"
@@ -113,7 +114,12 @@ export function AccountInformationFormTab({ formData, handleInputChange, handleS
               value={formData.newPassword}
               onChange={handleInputChange}
             />
-          </div>
+          </div> */}
+          <Link to={"/reset-password"}>
+            <CustomButton className="w-full bg-emerald-300">
+              Change password
+            </CustomButton>
+          </Link>
         </div>
         <CustomButton buttonVariant={"primary"} type="submit" className="w-full">
           Apply Changes

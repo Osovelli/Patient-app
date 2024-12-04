@@ -4,8 +4,10 @@ import { Heart, Share2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { AllDonationsModal } from '@/Components/CrowdFunding/AllDonationsModal'
-import { DonationModal } from '@/Components/CrowdFunding/DonationModal'
+import { AllDonationsModal } from '@/components/crowdFunding/AllDonationsModal'
+import { DonationModal } from '@/components/crowdFunding/DonationModal'
+import Header from '@/components/header'
+import Footer from '@/components/Footer'
 
 // Mock data - replace with API call later
 const campaignData = {
@@ -56,13 +58,16 @@ export default function CampaignDetails() {
   const progress = (campaignData.raised / campaignData.goal) * 100
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="container mx-auto max-w-6xl">
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <div className="mx-auto max-w-6xl mt-12 py-8 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
             <h1 className="text-3xl font-bold mb-6">{campaignData.title}</h1>
-            <div className="bg-yellow-400 rounded-lg mb-6 h-[400px]"></div>
+            <div className="rounded-lg h-[400px] relative md:mb-20">
+              <img src='/dental checkup.png' alt='checkup' className='object-cover absolute w-full'/>
+            </div>
             <div className="flex items-center space-x-2 mb-6">
               <Avatar>
                 <AvatarImage src={campaignData.organizer.avatar} />
@@ -89,14 +94,14 @@ export default function CampaignDetails() {
                 <span>• {campaignData.category}</span>
               </div>
 
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <div className="flex items-baseline mb-2">
                   <span className="text-2xl font-bold">₦{campaignData.raised.toLocaleString()}</span>
                   <span className="text-gray-500 ml-2">raised of ₦{campaignData.goal.toLocaleString()} goal</span>
                 </div>
                 <Progress value={progress} className="h-2 mb-2 bg-gray-100 [&>div]:bg-emerald-500" />
                 <p className="text-gray-500 text-sm">{campaignData.donations} donations</p>
-              </div>
+              </div> */}
 
               <Button
               onClick={() => setIsDonateModalOpen(true)} 
@@ -143,6 +148,7 @@ export default function CampaignDetails() {
           </div>
         </div>
       </div>
+      <Footer />
       {/* Add the DonationsModal */}
       <AllDonationsModal
         isOpen={isAllDonationModalOpen}

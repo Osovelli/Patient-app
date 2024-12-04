@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthForm from '@/Components/Auth/AuthForm';
-import AuthFooter from '@/Components/Auth/AuthFooter';
+import AuthForm from '@/components/auth/AuthForm';
+import AuthFooter from '@/components/auth/AuthFooter';
 
 const ResetPassword = () => {
   const navigate = useNavigate();

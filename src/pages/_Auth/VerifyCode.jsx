@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import AuthFooter from '@/Components/Auth/AuthFooter'
+import AuthFooter from '@/components/auth/AuthFooter'
 
 export default function VerifyAccount() {
   const [otp, setOtp] = useState(['', '', '', '', '', ''])

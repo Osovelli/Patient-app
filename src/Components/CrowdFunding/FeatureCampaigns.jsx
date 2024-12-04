@@ -79,38 +79,68 @@ const FeaturedCampaigns = () => {
 
 export default FeaturedCampaigns */
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import CampaignCard from './CampaignCard'
 import { Link } from 'react-router-dom'
 
 const FeaturedCampaigns = () => {
-  const campaigns = [
-    {
-      image: "/victoria.png",
-      location: "Ikeja, Lagos",
-      title: "Save Osaze Odemwingie",
-      raised: 100000,
-      goal: 500000,
-      lastDonation: "15m ago"
-    },
-    {
-      image: "/victoria.png",
-      location: "Abuja, FCT",
-      title: "Help Amina Fight Cancer",
-      raised: 250000,
-      goal: 1000000,
-      lastDonation: "1h ago"
-    },
-    {
-      image: "/victoria.png",
-      location: "Port Harcourt, Rivers",
-      title: "Support Emeka's Heart Surgery",
-      raised: 1050000,
-      goal: 2000000,
-      lastDonation: "30m ago"
+
+    const [campaigns, setCampaigns] = useState([
+      {
+        id: 1,
+        title: "Save Osaze Odemwinge",
+        location: "Ikeja, Lagos",
+        description: "In today's digital age, managing and organizing an ever-expanding array of digital assets can be a daunting task.",
+        image: "/donate image.png",
+        raised: "100,000",
+        goal: "500,000",
+        lastDonation: "15m ago",
+        progress: 20,
+        likes: 50,
+        isLiked: false
+      },
+      {
+        id: 2,
+        title: "Save Osaze Odemwinge",
+        location: "Ikeja, Lagos",
+        description: "In today's digital age, managing and organizing an ever-expanding array of digital assets can be a daunting task.",
+        image: "/donate image.png",
+        raised: "50,000",
+        goal: "500,000",
+        lastDonation: "15m ago",
+        progress: 20,
+        likes: 50,
+        isLiked: false
+      },
+      {
+        id: 3,
+        title: "Save Osaze Odemwinge",
+        location: "Ikeja, Lagos",
+        description: "In today's digital age, managing and organizing an ever-expanding array of digital assets can be a daunting task.",
+        image: "/donate image.png",
+        raised: "100,00",
+        goal: "500,000",
+        lastDonation: "15m ago",
+        progress: 20,
+        likes: 50,
+        isLiked: false
+      }
+    ]);
+
+    const handleLike = (id) => {
+      setCampaigns(prevCampaigns =>
+        prevCampaigns.map(campaign =>
+          campaign.id === id
+            ? { 
+                ...campaign, 
+                likes: campaign.isLiked ? campaign.likes - 1 : campaign.likes + 1,
+                isLiked: !campaign.isLiked
+              }
+            : campaign
+        )
+      )
     }
-  ]
 
   return (
     <section className="py-12 px-4">
@@ -128,7 +158,7 @@ const FeaturedCampaigns = () => {
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {campaigns?.map((campaign, index) => (
-            <CampaignCard key={index} {...campaign} />
+            <CampaignCard key={index} {...campaign} onLike={() => handleLike(campaign.id)} />
           ))}
         </div>
       </div>

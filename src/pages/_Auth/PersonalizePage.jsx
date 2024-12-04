@@ -8,8 +8,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import AuthForm from '@/Components/Auth/AuthForm';
-import AuthFooter from '@/Components/Auth/AuthFooter';
+import AuthForm from '@/components/auth/AuthForm';
+import AuthFooter from '@/components/auth/AuthFooter';
 
 export default function PersonalizeProfile() {
   const [formData, setFormData] = useState({

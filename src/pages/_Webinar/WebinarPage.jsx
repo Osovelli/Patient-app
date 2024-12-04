@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import WebinarSearch from '@/Components/Webinar/WebinarSearch'
-import TopicsFilter from '@/Components/Webinar/TopicsFilter'
-import WebinarCard from '@/Components/Webinar/WebinarCard'
-import { AppLayout } from '@/Components/AppLayout'
+import WebinarSearch from '@/components/webinar/WebinarSearch'
+import TopicsFilter from '@/components/webinar/TopicsFilter'
+import WebinarCard from '@/components/webinar/WebinarCard'
+import { AppLayout } from '@/components/AppLayout'
 
 
 // Mock data - replace with API call later
@@ -12,6 +12,7 @@ const webinars = Array(6).fill().map((_, index) => ({
   id: `webinar-${index + 1}`,
   title: "Healthy Eating Habits for Busy Lifestyles.",
   subtitle: "Building a Balanced Diet",
+  image:'/young afro woman.jpeg',
   categories: ["Category1", "Category2"]
 }))
 
@@ -50,6 +51,7 @@ export default function WebinarPage() {
                   {...webinar}
                   color={index % 3 === 0 ? 'teal' : index % 3 === 1 ? 'emerald' : 'yellow'}
                   isLoggedIn={isLoggedIn}
+                  image={webinar.image}
                 />
               ))}
             </div>

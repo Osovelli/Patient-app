@@ -1,5 +1,6 @@
-import BlogPostContent from '@/Components/Blog/BlogPostContent'
-import BlogPostHeader from '@/Components/Blog/BlogPostHeader'
+import BlogPostContent from '@/components/blog/BlogPostContent'
+import BlogPostHeader from '@/components/blog/BlogPostHeader'
+import Header from '@/components/header'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ export const BlogPost = () => {
 
     return (
     <div className='w-full container h-screen'>
+        <Header />
         {/* <section 
         className="h-[400px] bg-contain bg-no-repeat w-full py-4" 
         style={{ backgroundImage: 'url("/BG.png")' }}

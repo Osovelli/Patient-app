@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { StarRating } from '../StarRating'
+import { CustomButton } from '../CustomButton'
 
 export function ReviewInput({ userAvatar }) {
   const [isFocused, setIsFocused] = useState(false)
@@ -35,12 +36,15 @@ export function ReviewInput({ userAvatar }) {
             />
           </div>
           {/* Rating section appears when input is focused or has content */}
-          {(isFocused || rating > 0 || review) && (
-            <div className="border-t px-3 py-2">
+          {(isFocused && rating > 0 && review) && (
+            <div className="border-t space-y-2 px-3 py-2">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-500">Rate this facility</span>
                 <StarRating rating={rating} onRatingChange={setRating} />
               </div>
+              <CustomButton buttonVariant={'primary'}>
+                Submit
+              </CustomButton>
             </div>
           )}
         </div>

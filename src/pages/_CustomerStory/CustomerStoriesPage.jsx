@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown, MessageSquare } from 'lucide-react'
-import { Button } from '@/Components/ui/button'
-import Header from '@/Components/header'
-import AvatarGroup from '@/Components/AvatarGroup'
+import { Button } from '@/components/ui/button'
+import Header from '@/components/header'
+import AvatarGroup from '@/components/AvatarGroup'
+import Footer from '@/components/Footer'
 
 // Placeholder data - this would be replaced by API call in the future
 const stories = [
@@ -38,14 +39,14 @@ const stories = [
 ]
 
 const avatars = [
-    { src: "/placeholder.svg?height=40&width=40&text=1", alt: "Patient 1" },
-    { src: "/placeholder.svg?height=40&width=40&text=2", alt: "Patient 2" },
-    { src: "/placeholder.svg?height=40&width=40&text=3", alt: "Patient 3" },
-    { src: "/placeholder.svg?height=40&width=40&text=4", alt: "Patient 4" },
-    { src: "/placeholder.svg?height=40&width=40&text=5", alt: "Patient 5" },
-    { src: "/placeholder.svg?height=40&width=40&text=6", alt: "Patient 6" },
-    { src: "/placeholder.svg?height=40&width=40&text=7", alt: "Patient 7" },
-    { src: "/placeholder.svg?height=40&width=40&text=8", alt: "Patient 8" },
+    { src: "/Avatar/avatar 1.png", alt: "Patient 1" },
+    { src: "/Avatar/avatar 2.png", alt: "Patient 2" },
+    { src: "/Avatar/avatar 3.png", alt: "Patient 3" },
+    { src: "/Avatar/avatar 4.png", alt: "Patient 4" },
+    { src: "/Avatar/avatar 5.png", alt: "Patient 5" },
+    { src: "/Avatar/avatar 6.png", alt: "Patient 6" },
+    { src: "/Avatar/avatar 7.png", alt: "Patient 7" },
+    { src: "/Avatar/avatar 8.png", alt: "Patient 8" },
   ]
 
 export default function CustomerStoriesPage() {
@@ -102,6 +103,7 @@ export default function CustomerStoriesPage() {
           ))}
         </div>
       </main>
+      <Footer />
     </div>
   )
 }

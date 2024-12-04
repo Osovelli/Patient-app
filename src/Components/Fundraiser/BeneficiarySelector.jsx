@@ -29,6 +29,19 @@ const BeneficiarySelection = ({ value, onChange, onEdit }) => {
   return (
     <Card className="p-6">
       <div className="space-y-4 mb-6">
+      <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h3 className="text-base font-medium break-words inline-block w-full max-w-[16rem] sm:max-w-none py-1">
+              Share the details of your fundraising with donors
+            </h3> 
+            <div className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white">
+              <Check className="h-2 w-2" />
+            </div>
+          </div>
+          <Button variant="ghost" size="sm" onClick={() => onEdit(2)}>
+            Edit
+          </Button>
+        </div>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h3 className="text-base font-medium">Add a cover photo or video</h3>
@@ -37,21 +50,6 @@ const BeneficiarySelection = ({ value, onChange, onEdit }) => {
             </div>
           </div>
           <Button variant="ghost" size="sm" onClick={() => onEdit(1)}>
-            Edit
-          </Button>
-        </div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-          <h3 className="text-base font-medium break-words inline-block w-full max-w-[16rem] sm:max-w-none px-2 py-1">
-  Share the details of your fundraising with donors
-</h3> 
-
-
-            <div className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white">
-              <Check className="h-2 w-2" />
-            </div>
-          </div>
-          <Button variant="ghost" size="sm" onClick={() => onEdit(2)}>
             Edit
           </Button>
         </div>
@@ -73,13 +71,13 @@ const BeneficiarySelection = ({ value, onChange, onEdit }) => {
           value="someone"
           title="Someone else"
           description="Funds will be delivered to a beneficiary account"
-          color={'purple'}
+          color={'emerald'}
         />
         <BeneficiaryOption
           value="charity"
           title="Charity"
           description="Funds will be delivered to your chosen nonprofit for you"
-          color={'blue'}
+          color={'emerald'}
         />
       </RadioGroup>
 

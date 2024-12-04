@@ -26,14 +26,14 @@ const StepContent = ({ currentStep, onEdit }) => {
   const renderStepContent = () => {
     switch (currentStep) {
       case 1:
+        return <FundraiserDetailsForm formData={formData} updateFormData={updateFormData} />
+      case 2:
         return (
           <Card className="p-6">
             <h2 className="text-xl font-semibold mb-6">Add a cover photo or video</h2>
             <ImageFileUploader onImageChange={handleImageChange} />
           </Card>
         )
-      case 2:
-        return <FundraiserDetailsForm formData={formData} updateFormData={updateFormData} />
       case 3:
         return (
           <BeneficiarySelection
@@ -59,7 +59,7 @@ const StepContent = ({ currentStep, onEdit }) => {
 
   return (
     <div className="space-y-8 py-4">
-      <div>
+      <div className='text-center md:text-left'>
         <h1 className="text-2xl font-semibold">Create fundraiser</h1>
         <p className="text-gray-500">Start a fundraising journey</p>
       </div>

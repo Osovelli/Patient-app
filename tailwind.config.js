@@ -67,11 +67,21 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+			heartBeat: {
+			'0%, 28%, 70%': { transform: 'scale(1)' },
+			'14%, 42%': { transform: 'scale(1.3)' },
+			},
+			likePopup: {
+			'0%, 100%': { transform: 'translateY(0) scale(1)' },
+			'50%': { transform: 'translateY(-10px) scale(1.2)' },
+			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+			heartBeat: 'heartBeat 1s ease-in-out',
+			likePopup: 'likePopup 0.5s ease-in-out',
   		}
   	}
   },

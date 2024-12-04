@@ -1,8 +1,9 @@
 import { Play, Rewind, Volume2, Maximize2, Rss } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { AppLayout } from '@/Components/AppLayout'
+import { AppLayout } from '@/components/AppLayout'
 import { SiGooglepodcasts } from 'react-icons/si'
 import { FaPodcast, FaRss, FaSpotify } from 'react-icons/fa'
+import Footer from '@/components/Footer'
 
 // Mock data (replace with API data later)
 const episode = {

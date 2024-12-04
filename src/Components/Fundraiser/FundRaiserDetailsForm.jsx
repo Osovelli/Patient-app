@@ -9,6 +9,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
+import { RadioGroup, RadioGroupItem } from '../ui/radio-group'
+import { Label } from '../ui/label'
 
 // Mock data - replace with actual data from your API
 const states = [
@@ -25,6 +27,21 @@ const lgas = {
   // Add more LGAs
 }
 
+const duration = [
+  "1 month",
+  "2 months",
+  "3 months",
+  "6 months",
+  "9 months",
+  "1 year",  
+]
+
+const categories = [
+  "Category 1",
+  "Category 2",
+  "Category 3",
+]
+
 const FundraiserDetailsForm = ({ formData, updateFormData }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -40,6 +57,14 @@ const FundraiserDetailsForm = ({ formData, updateFormData }) => {
 
   const handleLGAChange = (value) => {
     updateFormData({ lga: value })
+  }
+
+  const handleDurationChange = (value) => {
+    updateFormData({ duration: value })
+  }
+
+  const handleCategoryChange = (value) => {
+    updateFormData({ category: value })
   }
 
   return (
@@ -95,6 +120,44 @@ const FundraiserDetailsForm = ({ formData, updateFormData }) => {
                 ))}
               </SelectContent>
             </Select>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium mb-2">
+              How long is the Campaign for?
+            </label>
+            <Select value={formData.duration} onValueChange={handleDurationChange}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select Campaign Duration" />
+              </SelectTrigger>
+              <SelectContent>
+                {duration.map((time) => (
+                  <SelectItem key={time} value={time}>
+                    {time}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-2">
+              Please select campaign category
+            </label>
+            <RadioGroup
+              value={formData.category}
+              onValueChange={handleCategoryChange}
+              className="space-y-1 gap-6 md:flex justify-stretch p-2 bg-gray-100/50 "
+            >
+              {categories.map((category) => (
+                <div key={category} className="flex items-center space-x-2">
+                  <RadioGroupItem value={category} id={category} />
+                  <label className="text-sm" htmlFor={category}>{category}</label>
+                </div>
+              ))}
+            </RadioGroup>
           </div>
         </div>
 

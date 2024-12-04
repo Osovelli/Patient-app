@@ -24,6 +24,7 @@ import ReviewFacility from './pages/_Review/FacilityReview';
 import AccountPage from './pages/Account';
 import Advocacy from './pages/Advocacy';
 import AwardsPage from './pages/AwardPage';
+import CookieConsent from './components/cookies/CookieConsent';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         <Route path="/advocacy" element={<Advocacy/>} />
         <Route path="/awards" element={<AwardsPage />} />
       </Routes>
+      <CookieConsent />
     </BrowserRouter>
   );
 }

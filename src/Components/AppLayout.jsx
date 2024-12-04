@@ -1,8 +1,9 @@
 import Header from "./header";
+import { cn } from "@/lib/utils";
 
-export const AppLayout = ({children, showHeader=true, loggedIn}) => {
+export const AppLayout = ({children, showHeader=true, loggedIn, className}) => {
     return (
-      <div className="h-screen w-full bg-gray-50">
+      <div className={cn('h-screen w-full bg-gray-50', className)}>
        {showHeader && 
        <Header isLoggedIn={loggedIn} />
        }

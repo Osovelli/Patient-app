@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { useToast } from '@/hooks/use-toast'
-import ProgressTracker from '@/Components/Fundraiser/ProgressTracker'
-import StepContent from '@/Components/Fundraiser/StepContent'
+import ProgressTracker from '@/components/fundraiser/ProgressTracker'
+import StepContent from '@/components/fundraiser/StepContent'
 import { FundraiserFormProvider, useFundraiserForm } from '@/lib/Context/FormRaiserContext'
-import { AppLayout } from '@/Components/AppLayout'
+import { AppLayout } from '@/components/AppLayout'
 import { fundraiserSteps } from '@/lib/FundRaiserSteps'
 
 const CreateFundraiserContent = () => {

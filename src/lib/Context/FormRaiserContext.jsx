@@ -13,6 +13,8 @@ export const FundraiserFormProvider = ({ children }) => {
     description: '',
     beneficiaryType: '',
     goal: '',
+    duration: '',
+    category: '',
   })
 
   const updateFormData = (newData) => {

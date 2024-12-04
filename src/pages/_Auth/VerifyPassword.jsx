@@ -1,7 +1,7 @@
 'use client'
 
-import AuthFooter from "@/Components/Auth/AuthFooter"
-import AuthForm from "@/Components/Auth/AuthForm"
+import AuthFooter from "@/components/auth/AuthFooter"
+import AuthForm from "@/components/auth/AuthForm"
 
 export default function CheckInbox() {
   return (

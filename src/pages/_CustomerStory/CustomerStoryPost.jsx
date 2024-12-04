@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Facebook, Twitter, Linkedin, Link } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import Header from '@/Components/header'
+import Header from '@/components/header'
 import { FaFacebook, FaGoogle, FaLinkedin, FaTwitch, FaTwitter } from 'react-icons/fa'
 
 // This is a placeholder for the API data structure

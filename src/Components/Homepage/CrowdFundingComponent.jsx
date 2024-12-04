@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight, Heart } from "lucide-react";
 import { Link } from 'react-router-dom';
+//import { campaigns } from '@/lib/mockCampaigns.';
 
 const CrowdfundingSection = () => {
-  const campaigns = [
+  const [campaigns, setCampaigns] = useState([
     {
       id: 1,
       title: "Save Osaze Odemwinge",
@@ -16,7 +17,9 @@ const CrowdfundingSection = () => {
       raised: "100,00",
       goal: "500,000",
       lastDonation: "15m ago",
-      progress: 20
+      progress: 20,
+      likes: 300,
+      isLiked: false
     },
     {
       id: 2,
@@ -27,7 +30,9 @@ const CrowdfundingSection = () => {
       raised: "100,00",
       goal: "500,000",
       lastDonation: "15m ago",
-      progress: 20
+      progress: 20,
+      likes: 450,
+      isLiked: false
     },
     {
       id: 3,
@@ -38,9 +43,26 @@ const CrowdfundingSection = () => {
       raised: "100,00",
       goal: "500,000",
       lastDonation: "15m ago",
-      progress: 20
+      progress: 20,
+      likes: 67,
+      isLiked: false
     }
-  ];
+  ])
+
+  const handleLike = (id) => {
+    setCampaigns(prevCampaigns =>
+      prevCampaigns.map(campaign =>
+        campaign.id === id
+          ? { 
+              ...campaign, 
+              likes: campaign.isLiked ? campaign.likes - 1 : campaign.likes + 1,
+              isLiked: !campaign.isLiked
+            }
+          : campaign
+      )
+    )
+  }
+  
 
   return (
     <>
@@ -77,7 +99,52 @@ const CrowdfundingSection = () => {
       <section className="bg-gray-50 py-24">
         <div className="px-4">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {campaigns.map((campaign) => (
+          {campaigns.map((campaign) => (
+              <Card key={campaign.id} className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className='relative'>
+                    <img
+                      src={campaign.image}
+                      alt={campaign.title}
+                      className="w-full object-cover"
+                    />
+                    <Button
+                    variant="ghost"
+                    className="absolute h-12 bottom-0 right-4 shadow-sm transform translate-y-1/2 bg-white  hover:bg-gray-50 flex items-center gap-1.5 rounded-sm px-4 py-2"
+                    onClick={() => handleLike(campaign.id)}
+                  >
+                    <Heart
+                    size={25}
+                      className={`transition-colors ${
+                        campaign.isLiked ? 'fill-emerald-500 stroke-emerald-500 animate-heartBeat' : 'stroke-gray-500'
+                      }`}
+
+                    />
+                    <span className={`text-sm ${campaign.isLiked ? 'text-emerald-500' : 'text-gray-500'}`}>
+                      {campaign.likes}
+                    </span>
+                  </Button>
+
+                  </div>
+                  <div className="p-6 pt-8">
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <MapPin className="h-4 w-4 text-emerald-500" />
+                      {campaign.location}
+                    </div>
+                    
+                    <h3 className="mt-2 text-xl font-bold">{campaign.title}</h3>
+                    <p className="mt-2 text-gray-600">
+                      {campaign.description}
+                    </p>
+                    
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+
+            {/* Original Campaign card section. DO NOT DELETE */}
+
+            {/* {campaigns.map((campaign) => (
               <Card key={campaign.id} className="overflow-hidden">
                 <CardContent className="p-0">
                   <img
@@ -121,7 +188,7 @@ const CrowdfundingSection = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            ))} */}
           </div>
           
           <div className="mt-12 flex justify-center">

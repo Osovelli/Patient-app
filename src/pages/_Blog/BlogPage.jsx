@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Link } from 'react-router-dom'
 import { mockPosts } from '@/lib/mockposts'
-import Header from '@/Components/header'
+import Header from '@/components/header'
+import Footer from '@/components/Footer'
 
 
 const categories = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
@@ -169,6 +170,7 @@ export default function BlogHome() {
         </div>
       </section>
     </div>
+    <Footer />
     </div>
   )
 }

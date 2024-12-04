@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { AppLayout } from '@/Components/AppLayout'
+import { AppLayout } from '@/components/AppLayout'
 
 // Mock data to be replace with API call later
 const webinarData = {

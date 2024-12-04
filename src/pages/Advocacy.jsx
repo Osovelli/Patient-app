@@ -1,8 +1,9 @@
-import { ComplaintGuideSection } from '@/Components/Adovcacy/ComplaintGuideSection'
-import { HelpSection } from '@/Components/Adovcacy/HelpSection'
-import { HeroSection } from '@/Components/Adovcacy/HeroSection'
-import { SignUpSection } from '@/Components/Adovcacy/SignUp'
-import { AppLayout } from '@/Components/AppLayout'
+import { ComplaintGuideSection } from '@/components/adovcacy/ComplaintGuideSection'
+import { HelpSection } from '@/components/adovcacy/HelpSection'
+import { HeroSection } from '@/components/adovcacy/HeroSection'
+import { SignUpSection } from '@/components/adovcacy/SignUp'
+import { AppLayout } from '@/components/AppLayout'
+import Footer from '@/components/Footer'
 import React from 'react'
 
 const Advocacy = () => {
@@ -12,6 +13,7 @@ const Advocacy = () => {
         <ComplaintGuideSection />
         <HelpSection />
         <SignUpSection />
+        <Footer />
     </AppLayout>
   )
 }

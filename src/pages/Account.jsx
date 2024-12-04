@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { ProfileDetails } from '@/Components/Account/ProfileDetails'
-import { AccountInformationFormTab } from '@/Components/Account/AccountInformationFormTab'
-import { AppLayout } from '@/Components/AppLayout'
-import CrowdfundingCardTab from '@/Components/Account/CrowdfundingCardTab'
-import HospitalReviewsTab from '@/Components/Account/HospitalReviewsTab'
-import AdvocacyTab from '@/Components/Account/AdvocacyTab'
+import { ProfileDetails } from '@/components/account/ProfileDetails'
+import { AccountInformationFormTab } from '@/components/account/AccountInformationFormTab'
+import { AppLayout } from '@/components/AppLayout'
+import CrowdfundingCardTab from '@/components/account/CrowdfundingCardTab'
+import HospitalReviewsTab from '@/components/account/HospitalReviewsTab'
+import AdvocacyTab from '@/components/account/AdvocacyTab'
 
 
 export default function AccountPage() {

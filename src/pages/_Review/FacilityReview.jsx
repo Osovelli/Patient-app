@@ -2,11 +2,11 @@ import React from 'react'
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { ReviewInput } from '@/Components/Review/ReviewInput'
-import { ExternalLinkComponent } from '@/Components/Review/ExternalLink'
-import { AppLayout } from '@/Components/AppLayout'
-import { RatingBar } from '@/Components/Review/RatingBar'
-import { ReviewCard } from '@/Components/Review/ReviewCard'
+import { ReviewInput } from '@/components/review/ReviewInput'
+import { ExternalLinkComponent } from '@/components/review/ExternalLink'
+import { AppLayout } from '@/components/AppLayout'
+import { RatingBar } from '@/components/review/RatingBar'
+import { ReviewCard } from '@/components/review/ReviewCard'
 import { useParams } from 'react-router-dom'
 
 // Mock review data
@@ -30,7 +30,7 @@ export default function ReviewFacility() {
   const { id } = useParams()
 
   return (
-    <AppLayout showHeader={true}>
+    <AppLayout className='h-full' showHeader={true} >
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Company Header */}
       <div className="flex items-start justify-between mb-8">
@@ -54,7 +54,7 @@ export default function ReviewFacility() {
             </div>
           </div>
         </div>
-        <ExternalLinkComponent href="www.ipatient.ng" />
+        {/* <ExternalLinkComponent href="www.ipatient.ng" /> */}
       </div>
 
       {/* Write Review Input */}

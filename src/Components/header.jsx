@@ -9,7 +9,7 @@ import { AiOutlineBarChart, AiOutlineDesktop } from "react-icons/ai";
 import { HiOutlineMicrophone } from "react-icons/hi2";
 import { SlTrophy } from "react-icons/sl";
 import { ChevronDown } from 'lucide-react'
-import { ProfileDetails } from './Account/ProfileDetails'
+import { ProfileDetails } from './account/ProfileDetails'
 import HeaderProfile from './HeaderProfile'
 
 const Header = ({ isLoggedIn }) => {

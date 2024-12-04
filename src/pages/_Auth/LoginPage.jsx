@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import AuthForm from "@/Components/Auth/AuthForm"
-import AuthFooter from '@/Components/Auth/AuthFooter'
+import AuthForm from "@/components/auth/AuthForm"
+import AuthFooter from '@/components/auth/AuthFooter'
 
 export const LoginPage = () => {
   const [formData, setFormData] = useState({

@@ -11,8 +11,9 @@ export const HeroSection = () => {
         loop
         muted
         playsInline
+        poster='/hallway.jpeg'
       >
-        <source src="/placeholder-video.mp4" type="video/mp4" />
+        <source src="/placeholder-video.mp4" type="video/mp4"  />
       </video>
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
