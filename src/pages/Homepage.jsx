@@ -10,11 +10,18 @@ import PodcastWebinarsSection from '@/components/homepage/PodcastComponent'
 import { ContactUsSection } from '@/components/homepage/ContactUsComponent'
 import FAQSection from '@/components/homepage/FAQComponent'
 import Footer from '@/components/Footer'
+import SEO from '@/components/SEO'
 
 
 const Homepage = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Home | Patient.ng"
+        description="Welcome to Your Patient.ng. We provide amazing services and products."
+        name="patient.ng"
+        type="website"
+      />
         <Header />
         <HeroSection />
         <TimelineSection />

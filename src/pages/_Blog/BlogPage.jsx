@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { mockPosts } from '@/lib/mockposts'
 import Header from '@/components/header'
 import Footer from '@/components/Footer'
+import SEO from '@/components/SEO'
 
 
 const categories = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
@@ -97,6 +98,12 @@ export default function BlogHome() {
 
   return (
     <div>
+      <SEO
+        title="Blog | Patient.ng"
+        description="Read all the blogs composed and curated by our writers, and our advocates."
+        name="Patient.ng"
+        type="website"
+      />
     <Header />
     <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Hero Section */}

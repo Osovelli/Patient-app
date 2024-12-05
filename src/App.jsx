@@ -25,10 +25,12 @@ import AccountPage from './pages/Account';
 import Advocacy from './pages/Advocacy';
 import AwardsPage from './pages/AwardPage';
 import CookieConsent from './components/cookies/CookieConsent';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 function App() {
   return (
+    <HelmetProvider>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Homepage />} />
@@ -58,6 +60,7 @@ function App() {
       </Routes>
       <CookieConsent />
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 
