@@ -1,9 +1,23 @@
-import { Play } from 'lucide-react'
+import { Pause, Play } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import AvatarGroup from '../AvatarGroup'
+import { useRef, useState } from 'react'
 
 export default function HeroSection() {
+  const [isPlaying, setIsPlaying] = useState(true)
+  const videoRef = useRef(null)
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
   const avatars = [
     { src: "/Avatar/avatar 4.png", alt: "AvatarA" },
     { src: "/Avatar/avatar 5.png", alt: "AvatarB" },
@@ -36,17 +50,6 @@ export default function HeroSection() {
                 at the age of 25, I was suddenly thrust i.
               </p>
               <div className="flex items-center">
-                {/* <div className="flex -space-x-2">
-                  {avatars.map((avatar, i) => (
-                    <Avatar key={i} className="border-2 border-emerald-950 w-8 h-8">
-                      <AvatarImage src={avatar.src} alt={`Listener ${avatar.name}`} />
-                      <AvatarFallback>{avatar.name}</AvatarFallback>
-                    </Avatar>
-                  ))}
-                  <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-sm font-medium border-2 border-emerald-950">
-                    +2
-                  </div>
-                </div> */}
                 <AvatarGroup avatars={avatars} />
               </div>
             </div>
@@ -54,17 +57,31 @@ export default function HeroSection() {
 
           {/* Featured Video */}
           <div className="relative rounded-2xl overflow-hidden aspect-video">
-            <img
-              src="/medical checkup.jpeg"
-              alt="Featured podcast episode"
-              className="w-full h-full object-cover"
-            />
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster='/podcast placeholder.png'
+            >
+              <source src="/man podcast.mp4" type="video/mp4"  />
+            </video>
             <Button 
               size="icon"
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-emerald-500 hover:bg-emerald-600 rounded-full w-20 h-20"
+              onClick={togglePlayPause}
             >
-              <Play className="h-10 w-10" />
-              <span className="sr-only">Play featured episode</span>
+              {isPlaying ? (
+                <Pause className="h-10 w-10" />
+                ) : 
+                (
+                  <Play className="h-10 w-10" />
+                )}
+                <span className="sr-only">{isPlaying ? 'Pause' : 'Play'} featured episode</span>
+              {/* <Play className="h-10 w-10" />
+              <span className="sr-only">Play featured episode</span> */}
             </Button>
           </div>
         </div>
